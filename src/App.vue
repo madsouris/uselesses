@@ -12,7 +12,14 @@ export default defineComponent({
   name: 'App',
   components: {
     IonApp,
-    IonRouterOutlet
-  }
+    IonRouterOutlet,
+  },
 });
 </script>
+
+<style>
+ion-thumbnail {
+  width: 100%;
+  height: 100%;
+}
+</style>

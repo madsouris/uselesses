@@ -1,18 +1,37 @@
 <template>
   <div id="container">
     <strong>{{ name }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>
+      Explore
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://ionicframework.com/docs/components">
+        UI Components
+      </a>
+    </p>
+    <ion-button
+      color="primary"
+      expand="block"
+      router-direction="forward"
+      router-link="/contact">
+      Contact me
+    </ion-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { IonButton } from '@ionic/vue';
 
 export default defineComponent({
   name: 'ExploreContainer',
+  components: {
+    IonButton,
+  },
   props: {
-    name: String
-  }
+    name: String,
+  },
 });
 </script>
 
