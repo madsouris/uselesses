@@ -10,6 +10,7 @@
             router-direction="forward">
             <ion-icon slot="icon-only" :icon="chatbubbleOutline"></ion-icon>
           </ion-button>
+          <ion-menu-button auto-hide></ion-menu-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
@@ -48,7 +49,7 @@ import {
   IonButton,
   IonText,
   IonThumbnail,
-  IonImg,
+  IonImg,IonMenuButton
 } from '@ionic/vue';
 import { chatbubbleOutline } from 'ionicons/icons';
 
@@ -65,7 +66,7 @@ export default defineComponent({
     IonButton,
     IonText,
     IonThumbnail,
-    IonImg,
+    IonImg,IonMenuButton
   },
   setup() {
     return {

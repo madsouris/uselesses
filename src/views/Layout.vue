@@ -1,7 +1,27 @@
 <template>
   <ion-page>
-    <ion-tabs>
-      <ion-router-outlet></ion-router-outlet>
+    <ion-split-pane content-id="main" when="lg">
+    <!--  the side menu  -->
+    <ion-menu content-id="main" menu-id="mainMenu">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-item>
+          Home
+        </ion-item>
+        <ion-item button router-link="/contact">
+          Contact
+        </ion-item>
+      </ion-content>
+    </ion-menu>
+
+    <!-- the main content -->
+    <ion-content id="main">
+      <ion-tabs>
+      <ion-router-outlet ></ion-router-outlet>
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="watch" href="/page/watch">
           <ion-icon :icon="watchOutline" />
@@ -19,6 +39,9 @@
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
+    </ion-content>
+  </ion-split-pane>
+    
   </ion-page>
 </template>
 
@@ -31,7 +54,7 @@ import {
   IonLabel,
   IonIcon,
   IonPage,
-  IonRouterOutlet,
+  IonRouterOutlet,IonSplitPane,IonMenu,IonHeader,IonToolbar,IonTitle,IonContent,IonItem
 } from '@ionic/vue';
 import {
   gameControllerOutline,
@@ -40,7 +63,7 @@ import {
 } from 'ionicons/icons';
 
 export default defineComponent({
-  name: 'TabsPage',
+  name: 'MainLayout',
   components: {
     IonLabel,
     IonTabs,
@@ -48,7 +71,7 @@ export default defineComponent({
     IonTabButton,
     IonIcon,
     IonPage,
-    IonRouterOutlet,
+    IonRouterOutlet,IonSplitPane,IonMenu,IonHeader,IonToolbar,IonTitle,IonContent,IonItem
   },
   setup() {
     return {
